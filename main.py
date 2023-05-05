@@ -1,6 +1,6 @@
 import telebot
 from platform import platform, system, release
-import subprocess
+import os
 
 BOT_TOKEN = "5729050636:AAGmzPQy2Fmpi0l-AHmxNJ2FU221omQem3M"
 
@@ -34,14 +34,14 @@ def send_help(message):
 
 @bot.message_handler(commands=['spegni'])
 def send_spegni(message):
+    os.system("shutdown -f -s -t 1")
     bot.reply_to(message, f"Sistema in spegnimento capo")
-    subprocess.call(["shutdown /s /f /t 0"])
 
 
 @bot.message_handler(commands=['minecraft'])
 def send_ciaominecraft(message):
+    os.system("taskkill /IM javaw.exe /F")
     bot.reply_to(message, f"Minecraft in chiusura capo")
-    subprocess.call(["taskkill /IM minecraft.exe /F"])
 
 
 bot.infinity_polling()
