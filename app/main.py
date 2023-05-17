@@ -38,6 +38,18 @@ def send_spegni(message):
     bot.reply_to(message, f"Sistema in spegnimento capo")
 
 
+@bot.message_handler(commands=['log_off'])
+def send_logoff(message):
+    os.system("shutdown -f -l")
+    bot.reply_to(message, f"Disconnessione utente in corso capo")
+
+
+@bot.message_handler(commands=['f1'])
+def send_logoff(message):
+    os.system("shutdown -f -l")
+    bot.reply_to(message, f"Disconnessione utente in corso capo")
+
+
 @bot.message_handler(commands=['minecraft'])
 def send_ciaominecraft(message):
     os.system("taskkill /IM javaw.exe /F")
