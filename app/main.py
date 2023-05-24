@@ -46,7 +46,7 @@ def send_logoff(message):
 
 @bot.message_handler(commands=['f1'])
 def send_logoff(message):
-    os.system("shutdown -f -l")
+    os.system("taskkill /IM f12022.exe /F")
     bot.reply_to(message, f"Disconnessione utente in corso capo")
 
 
