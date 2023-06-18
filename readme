@@ -1,0 +1,10 @@
+check https://stackoverflow.com/questions/52636686/how-to-use-pyinstaller-from-script-not-terminal for self update
+like this:
+
+```import PyInstaller.__main__
+
+PyInstaller.__main__.run([
+    'my_script.py',
+    '--onefile',
+    '--windowed'
+])```
